@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -5,12 +6,12 @@
 void help();
 
 int main(int argc, char *args[]) {
-  // Ensuaring the user passes in a file
+  // Ensuring the user passes in a file
   if (argc < 2) {
     std::cout << "Invalid number of arguments\n";
     std::cout << '\n';
     help();
-    return 1;
+    return EXIT_FAILURE;
   }
 
   for (int i = 1; i < argc; i++) { // Loop to access and print multiple files
@@ -20,11 +21,17 @@ int main(int argc, char *args[]) {
     if (!file_name) {
       if (static_cast<std::string>(args[1]).compare("--help") == 0) {
         help();
-        return 0;
+        break; // Ends the loop
+      }
+
+      // When user tries to display help after other arguments
+      if (static_cast<std::string>(args[i]).compare("--help") == 0) {
+        std::cout << "--help can only be called on it's own\n";
+        std::cout << "Usage: disf --help";
       }
 
       std::cout << "Failed to read file \"" << args[i] << "\"\n";
-      return 1;
+      return EXIT_FAILURE;
     }
 
     // displaying the file line by line
@@ -39,7 +46,7 @@ int main(int argc, char *args[]) {
     }
   }
 
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 // help function
@@ -50,5 +57,11 @@ void help() {
   std::cout << "\t--help\tdisplay the help menu\n";
   std::cout << "\n[EXAMPLES]\n";
   std::cout << "\tdisf --help\n";
-  std::cout << "\tdisf file.txt\n";
+  std::cout << "\tdisf file0.txt\n";
+  std::cout << "\tdisf file1.txt file2.txt\n";
+  std::cout << "\tdisf file3.txt ~/Documents/file4.txt\n";
+  std::cout << "\n[NOTE]\n";
+  std::cout
+      << "\t--help is a stand-alone argument.\n\tAny arguments after it will "
+         "be ignored.\n\tIf it appears after some arguents, it won't work\n";
 }
