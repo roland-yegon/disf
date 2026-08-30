@@ -24,12 +24,6 @@ int main(int argc, char *args[]) {
         break; // Ends the loop
       }
 
-      // When user tries to display help after other arguments
-      if (static_cast<std::string>(args[i]).compare("--help") == 0) {
-        std::cout << "--help can only be called on it's own\n";
-        std::cout << "Usage: disf --help";
-      }
-
       std::cout << "Failed to read file \"" << args[i] << "\"\n";
       return EXIT_FAILURE;
     }
