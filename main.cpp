@@ -24,7 +24,9 @@ int main(int argc, char *args[]) {
         break; // Ends the loop
       }
 
-      std::cout << "Failed to read file \"" << args[i] << "\"\n";
+      std::cout << "\n=========================================\n";
+      std::cout << "Failed to read file \"" << args[i] << '\"';
+      std::cout << "\n=========================================\n";
       return EXIT_FAILURE;
     }
 
