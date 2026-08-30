@@ -9,13 +9,26 @@ A program that prints the contents of a file to the terminal
 
 ### _Requirements_
 
--- C++ compiler
+C++ compiler
 
 ### _Setup_
+
+**Linux**  
+-- Run this in your terminal
 
 ```
 git clone https://github.com/roland-yegon/disf.git
 cd disf
 g++ main.cpp -o disf
 mv disf /usr/bin/
+```
+
+**Windows**  
+-- Run this in your CMD
+
+```
+git clone https://github.com/roland-yegon/disf.git
+cd disf
+g++ main.cpp -o disf
+setx /M PATH "%PATH%;C:\path\to\current\disf\folder"
 ```
