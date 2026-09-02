@@ -13,7 +13,7 @@ C++ compiler
 
 ### _Setup_
 
-**Linux**  
+**Linux or Mac**  
 -- Run this in your terminal
 
 ```
@@ -29,6 +29,6 @@ mv disf /usr/bin/
 ```
 git clone https://github.com/roland-yegon/disf.git
 cd disf
-g++ main.cpp -o disf
+g++ main.cpp -o disf.exe
 setx /M PATH "%PATH%;C:\path\to\current\disf\folder"
 ```
