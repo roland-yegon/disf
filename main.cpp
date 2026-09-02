@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+// Stereo-type calling functions
 void help();
 
 int main(int argc, char *args[]) {
@@ -30,7 +31,7 @@ int main(int argc, char *args[]) {
       return EXIT_FAILURE;
     }
 
-    // displaying the file line by line
+    // Displaying the file line by line
     std::cout << "\n=========================================\n";
     std::cout << "Displaying: " << args[i];
     std::cout << "\n=========================================\n";
@@ -45,7 +46,7 @@ int main(int argc, char *args[]) {
   return EXIT_SUCCESS;
 }
 
-// help function
+// Help function
 void help() {
   std::cout << "Disf V0.1.0\n";
   std::cout << "Usage: disf [OPTIONS]... [FILES]...\n";
